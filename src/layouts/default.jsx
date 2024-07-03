@@ -1,10 +1,15 @@
 import { Outlet } from "react-router-dom";
+import { Sidebar } from "@/components/ui/sidebar";
+import { navItems } from "@/App";
 
 const Layout = () => {
   return (
-    <main className="flex flex-col min-h-screen p-4 overflow-auto items-center justify-center">
-      <Outlet />
-    </main>
+    <div className="flex min-h-screen">
+      <Sidebar items={navItems} />
+      <main className="flex-grow p-4 overflow-auto">
+        <Outlet />
+      </main>
+    </div>
   );
 };
 
